@@ -1,0 +1,11 @@
+/* logincss */
+
+.tableDiv {
+  width: 430px;
+  height: 260px;
+  position: absolute;
+  left: 50%;
+  margin-left: -215px;
+  top:35%;
+  padding: 20px 50px 50px 50px;
+}

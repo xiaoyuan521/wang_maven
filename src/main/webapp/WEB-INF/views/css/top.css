@@ -1,0 +1,36 @@
+.header {
+  position:absolute;
+  left: 0px;
+  top:0px;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+}
+
+.left {
+  position:absolute;
+  left: 0px;
+  top:100px;
+  bottom: 0px;
+  width: 200px;
+  overflow: hidden;
+  border-right: 1px solid black;
+}
+.subMenu {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.menu {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.main {
+  position:absolute;
+  top: 120px;
+  left: 220px;
+  right: 0px;
+  bottom: 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
