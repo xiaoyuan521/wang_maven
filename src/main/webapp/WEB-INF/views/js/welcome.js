@@ -28,7 +28,6 @@ define([ "common", "userAdd","ssq"], function(common, userAdd,ssq) {
 
         var pageName = $(this).attr("data-pagename");
         common.loadPage(pageName);
-
     }
 
     function getContextPath() {

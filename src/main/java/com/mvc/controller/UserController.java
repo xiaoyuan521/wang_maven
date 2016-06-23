@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +24,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mvc.dto.StudentDto;
 import com.mvc.model.StudentModel;
+import com.mvc.service.StudentService;
 import com.mvc.service.UsetService;
 
 @Controller
@@ -31,23 +34,120 @@ public class UserController {
 
     @Autowired
     UsetService userService = null;
+    @Autowired
+    StudentService studentService = null;
 
     @RequestMapping(value = "/userAdd")
     public String userAdd() {
         return "userAdd";
     }
 
+    /**
+     * student一览
+     *
+     * @param studentModel
+     * @return
+     */
+    @RequestMapping(value = "/studentList", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> studentList(@RequestBody StudentModel studentModel) {
+        System.out.println("hahah");
+
+        List<StudentDto> studentDtoList = studentService.selectStudent();
+
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("studentDtoList", studentDtoList);
+
+        return bulidReturnMap("ok", resultMap);
+
+    }
+
+    /**
+     * 新增student
+     *
+     * @param studentModel
+     * @return
+     */
     @RequestMapping(value = "/userAddInit", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> userAddInit(@RequestBody StudentModel studentModel) {
-        System.out.println("hahah");
 
-        userService.addStudent(studentModel);
+        studentService.addStudent(studentModel);
+        List<StudentDto> studentDtoList = studentService.selectStudent();
+
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("studentDtoList", studentDtoList);
+
+        return bulidReturnMap("ok", resultMap);
+
+    }
+
+    /**
+     * 删除student
+     *
+     * @param studentModel
+     * @return
+     */
+    @RequestMapping(value = "/studentDel", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> studentDel(@RequestBody StudentModel studentModel) {
+        studentService.deleteStudent(studentModel.getStudentId());
 
         return bulidReturnMap("ok", null);
 
     }
 
+    /**
+     * 编辑画面取值
+     *
+     * @param studentModel
+     * @return
+     */
+    @RequestMapping(value = "/studentEdit", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> studentEdit(@RequestBody StudentModel studentModel) {
+        List<StudentDto> studentEditList = studentService.getDisplayById(studentModel.getStudentId());
+
+        /**
+         * 使用Optional方法往前台传值
+         */
+        // StudentDto studentEditList1 = studentService.getDisplayById1(studentModel.getStudentId()).orElse(new
+        // StudentDto());
+
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("studentEditList", studentEditList);
+        // resultMap.put("studentEditList1", studentEditList1);
+        return bulidReturnMap("ok", resultMap);
+
+    }
+
+    /**
+     * 修改student
+     *
+     * @param studentModel
+     * @return
+     */
+    @RequestMapping(value = "/studentUpdate", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> studentUpdate(StudentModel studentModel) {
+        studentService.updateStudent(studentModel);
+        List<StudentDto> studentDtoList = studentService.selectStudent();
+
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("studentDtoList", studentDtoList);
+
+        return bulidReturnMap("ok", resultMap);
+    }
+
+    /**
+     * 文件上传
+     *
+     * @param studentModel
+     * @param file
+     * @param request
+     * @param model
+     * @return
+     */
     // 参考url：http://blog.csdn.net/cheung1021/article/details/7084673
     @RequestMapping(value = "/fileUpload", method = RequestMethod.POST)
     public String fileUpload(StudentModel studentModel, @RequestParam(value = "file", required = false) MultipartFile file, HttpServletRequest request, ModelMap model) {
@@ -87,7 +187,10 @@ public class UserController {
         return "result";
 
     }
-   /* 文件下载到 C:\\Users\\wang_changyuan\\upload\\*/
+
+    /**
+     * 文件下载到 C:\\Users\\wang_changyuan\\upload\\
+     */
     @RequestMapping(value = "/download", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> download(@RequestBody StudentModel studentModel, HttpServletResponse response, HttpServletRequest request) throws IOException {
@@ -116,7 +219,7 @@ public class UserController {
             // 读取文件
             reader = new FileInputStream(aaPath);
             // 写入浏览器的输出流
-            fileOutputStream = new FileOutputStream("C:\\Users\\wang_changyuan\\upload\\"+studentModel.getFileName());
+            fileOutputStream = new FileOutputStream("C:\\Users\\wang_changyuan\\upload\\" + studentModel.getFileName());
             // fileOutputStream = response.getOutputStream();
             while ((len = reader.read(bytes)) > 0) {
                 fileOutputStream.write(bytes, 0, len);
@@ -147,14 +250,18 @@ public class UserController {
 
     }
 
-
+    /**
+     * 测试用model返回数据
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/sayHello", method = RequestMethod.POST)
     @ResponseBody
-    public String   sayHello(Model model) {
-        //ModelAndView modelAndView = new ModelAndView();
+    public String sayHello(Model model) {
+        // ModelAndView modelAndView = new ModelAndView();
         model.addAttribute("hello", "hello");
         System.out.println("hahah");
-
 
         return "ssq";
     }

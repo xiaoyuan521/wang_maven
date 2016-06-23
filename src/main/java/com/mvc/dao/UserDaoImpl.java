@@ -7,12 +7,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.mvc.dto.UserDto;
 import com.mvc.model.LoginModel;
-import com.mvc.model.StudentModel;
 import com.mysql.jdbc.StringUtils;
 
 @Repository
@@ -22,8 +20,6 @@ public class UserDaoImpl implements UserDao {
     private JdbcTemplate JdbcTemelate = null;
 
     public List<UserDto> selectByCondition(LoginModel loginModel) {
-
-        MapSqlParameterSource paramMap = new MapSqlParameterSource();
 
         final StringBuilder sql = new StringBuilder();
         sql.append(" SELECT");
@@ -63,30 +59,6 @@ public class UserDaoImpl implements UserDao {
 
             return UserDto;
         }
-
-    }
-
-    @Override
-    public void insert(StudentModel studentModel) {
-
-        final StringBuilder sql = new StringBuilder();
-
-        sql.append(" INSERT INTO ");
-        sql.append(" student ");
-        sql.append(" ( ");
-        sql.append(" username, ");
-        sql.append(" age, ");
-        sql.append(" score, ");
-        sql.append(" gender ");
-        sql.append(" ) ");
-        sql.append(" values ");
-        sql.append(" ( ");
-        sql.append(" ?, ");
-        sql.append(" ?, ");
-        sql.append(" ?, ");
-        sql.append(" ? ");
-        sql.append(" ) ");
-        JdbcTemelate.update(sql.toString(), new Object[]{studentModel.getUsername(), studentModel.getAge(), studentModel.getScore(), studentModel.getGender()});
 
     }
 

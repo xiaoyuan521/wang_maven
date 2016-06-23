@@ -1,0 +1,117 @@
+/* datatable */
+.dtWrapper table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 0px;
+}
+
+.dtWrapper .noData {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.dtWrapper .dtHeadWrapper div {
+  float: left;
+}
+
+.dtWrapper .dtHeadWrapper {
+  clear: both;
+}
+
+.dtWrapper .dtHead td {
+  font-weight: bold;
+  text-align: center;
+}
+
+.dtWrapper .dtBodyWrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dtWrapper .dtHead table{
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.dtWrapper .dtHead td {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 0px;
+  border-top: 0px;
+}
+
+.dtWrapper .dtBody table{
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 1px solid black;
+}
+
+.dtWrapper .dtBody td {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+/* .dtWrapper .dtBody tr:last-child  td {
+  border-bottom: 0px;
+} */
+
+.dtWrapper .footerWrapper {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 0px;
+}
+
+.dtWrapper .dtHeadWrapper td {
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.dtWrapper .dtHeadWrapper .sortAble {
+  cursor: pointer;
+}
+
+.dtWrapper .table>thead>tr>th,
+.dtWrapper .table>tbody>tr>th,
+.dtWrapper .table>tfoot>tr>th,
+.dtWrapper .table>thead>tr>td,
+.dtWrapper .table>tbody>tr>td,
+.dtWrapper .table>tfoot>tr>td {
+  padding: 3px 3px 3px 3px;
+  vertical-align: middle;
+}
+
+.dtWrapper .table>thead>tr>td.sortAble {
+  padding: 3px 13px 3px 2px;
+}
+
+.dtWrapper .table>tbody>tr>td.dt_cbx,
+.dtWrapper .table>tbody>tr>td.dt_radio {
+  text-align:center;
+}
+
+.dtWrapper .dtHeadWrapper .dtHead {
+   background-color: #DADADA;
+}
+
+.headerAlignRight {
+  text-align: right !important;
+}
+.headerAlignRight.sortAble {
+  padding-right: 20px !important;
+}
+.headerAlignLeft {
+  text-align: left !important;
+}
+.headerAlignCenter {
+  text-align: center !important;
+}
+
+.dtWrapper .col-sel {
+  width: 40px;
+}
+
+.table-hover>tbody>tr:hover {
+  background-color:white;
+}

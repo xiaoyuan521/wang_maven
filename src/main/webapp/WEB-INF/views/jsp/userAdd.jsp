@@ -4,7 +4,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="${baseUrl}js/jquery.validate.js" type="text/JavaScript"></script>
+<script src="${baseUrl}js/jquery.validate.min.js" type="text/JavaScript"></script>
+<link type="text/css" href="${baseUrl}css/common.css" rel="stylesheet" />
 <title>SpringMvc</title>
+
 </head>
 <body>
   <div style="padding-top: 30px;">学生信息登录</div>
@@ -39,6 +44,8 @@
           <th></th>
           <td>
             <button type="button" id="p003UserAddBtn">登录</button>
+             <button type="button" id="p003StudentSearchBtn">查询</button>
+              <button type="button" id="p003ClearBtn">Clear</button>
           </td>
         </tr>
       </table>
@@ -61,14 +68,14 @@
       </tr>
       <tr>
         <td>
-          <input type="submit" value="添加新用户" />
+          <input type="submit" value="上传图片" />
         </td>
       </tr>
     </table>
   </form>
 
   <div style="padding-top: 30px;">学生信息查询</div>
-  <div id="p013UserSearchTable"></div>
-
+    <div id="p003StudentTable" style="width:500px;"></div>
 </body>
 </html>
+  <jsp:include page="./userEdit.jsp" />

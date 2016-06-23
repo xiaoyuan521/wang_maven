@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.mvc.dao.UserDao;
 import com.mvc.dto.UserDto;
 import com.mvc.model.LoginModel;
-import com.mvc.model.StudentModel;
 
 @Service
 public class UsetServiceImpl implements UsetService {
@@ -23,15 +22,6 @@ public class UsetServiceImpl implements UsetService {
         }
 
         return userDao.selectByCondition(loginModel);
-    }
-
-    @Override
-    public void addStudent(StudentModel studentModel) {
-
-        userDao.insert(studentModel);
-
-
-
     }
 
 }

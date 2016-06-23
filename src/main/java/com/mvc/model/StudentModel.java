@@ -2,6 +2,7 @@ package com.mvc.model;
 
 public class StudentModel {
 
+    private int studentId;
     private String username;
     private String gender;
     private String age;
@@ -65,5 +66,14 @@ public class StudentModel {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
 
 }
