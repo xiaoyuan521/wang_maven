@@ -14,7 +14,7 @@
 <link type="text/css" href="${baseUrl}css/top.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/userAdd.css" rel="stylesheet" />
 <script data-main="${baseUrl}js/main" src="${baseUrl}js/require.js"></script>
-<title>wang_maven_SpringMvc</title>
+<title>SpringMvc</title>
 </head>
 <body>
   <!-- head -->

@@ -20,30 +20,42 @@ define([ "common" ], function(common) {
         $("#p003UserAddForm").validate({
             rules: {
                 username: {
-                    required: true
+                    required: true,
+                    maxlength: 85
                 },
                 gender: {
-                    required: true
+                    required: true,
+                    maxlength: 85
                 },
                 age: {
-                    required: true
+                    required: true,
+                    digits: true,
+                    maxlength: 85
                 },
                 score: {
-                    required: true
+                    required: true,
+                    digits: true,
+                    maxlength: 85
                 }
             },
             messages: {
                 username: {
-                    required: "必须入力姓名"
+                    required: "必须入力姓名",
+                    maxlength: "长度不能超过85字符"
                 },
                 gender: {
-                    required: "必须入力性别"
+                    required: "必须入力性别",
+                    maxlength: "长度不能超过85字符"
                 },
                 age: {
-                    required: "必须入力年龄"
+                    required: "必须入力年龄",
+                    digits: "必须输入整数",
+                    maxlength: "长度不能超过85字符"
                 },
                 score: {
-                    required: "必须入力成绩"
+                    required: "必须入力成绩",
+                    digits: "必须输入整数",
+                    maxlength: "长度不能超过85字符"
                 }
             }
         });
@@ -58,7 +70,7 @@ define([ "common" ], function(common) {
 
             var params = {};
             params["username"] = $("#p003UserNameTxt").val();
-            params["gender"] = $("#p003GenderTxt").val();
+            params["gender"] = $("input:radio[name='gender']:checked").val();
             params["age"] = $("#p003AgeTxt").val();
             params["score"] = $("#p003ScoreTxt").val();
             if (!$("#p003UserAddForm").valid()) {
@@ -76,13 +88,31 @@ define([ "common" ], function(common) {
 
                     if (data.code == "ok") {
 
-                        var studentDtoList = data.result.studentDtoList;
-                        createTable(studentDtoList);
+                        $("#p003UserNameTxt").val("");
+                        $("#p003GenderBoyRadio").prop("checked", "true");
+                        $("#p003AgeTxt").val("");
+                        $("#p003ScoreTxt").val("");
+                        var params = {};
+                        params["username"] = $("#p003UserNameTxt").val();
+                        params["gender"] = $("input:radio[name='gender']:checked").val();
+                        params["age"] = $("#p003AgeTxt").val();
+                        params["score"] = $("#p003ScoreTxt").val();
+                        $.ajax({
+                            url: "/" + getContextPath() + "/studentList",
+                            type: 'POST',
+                            data: JSON.stringify(params),
+                            contentType: "application/json",
+                            dataType: "json",
+                            cache: false,
+                            success: function(data) {
+
+                                if (data.code == "ok") {
+                                    var studentDtoList = data.result.studentDtoList;
+                                    createTable(studentDtoList);
+                                }
+                            }
+                        });
                     }
-                    $("#p003UserNameTxt").val("");
-                    $("#p003GenderTxt").val("");
-                    $("#p003AgeTxt").val("");
-                    $("#p003ScoreTxt").val("");
                 }
             });
         });
@@ -92,6 +122,10 @@ define([ "common" ], function(common) {
          */
         $("#p003StudentSearchBtn").on("click", function() {
             var params = {};
+            params["username"] = $("#p003UserNameTxt").val();
+            params["gender"] = $("input:radio[name='gender']:checked").val();
+            params["age"] = $("#p003AgeTxt").val();
+            params["score"] = $("#p003ScoreTxt").val();
             $.ajax({
                 url: "/" + getContextPath() + "/studentList",
                 type: 'POST',
@@ -102,7 +136,6 @@ define([ "common" ], function(common) {
                 success: function(data) {
 
                     if (data.code == "ok") {
-
                         var studentDtoList = data.result.studentDtoList;
                         createTable(studentDtoList);
                     }
@@ -116,7 +149,8 @@ define([ "common" ], function(common) {
          */
         $("#p003ClearBtn").on("click", function() {
             $("#p003UserNameTxt").val("");
-            $("#p003GenderTxt").val("");
+            $("#p003GenderTxt").val("boy");
+            $("#p003GenderBoyRadio").prop("checked", "true");
             $("#p003AgeTxt").val("");
             $("#p003ScoreTxt").val("");
         });
@@ -134,7 +168,8 @@ define([ "common" ], function(common) {
                 text: "用户名"
             }, {
                 name: "gender",
-                text: "性别"
+                text: "性别",
+                fn: studentAgeHandler
             }, {
                 name: "age",
                 text: "年龄"
@@ -151,11 +186,22 @@ define([ "common" ], function(common) {
     }
 
     /**
+     * 性别显示为汉字
+     */
+    function studentAgeHandler(value, rowValue, tdDom) {
+        if (value == "boy") {
+            return "男";
+        } else if (value == "girl") {
+            return "女";
+        }
+
+    }
+
+    /**
      * 行点击
      */
     function rowClickCallback(rowValue, trDom) {
         var studentId = rowValue.studentId;
-
         $.ajax({
             url: "/" + getContextPath() + "/studentEdit",
             type: "POST",
@@ -168,8 +214,13 @@ define([ "common" ], function(common) {
             success: function(data) {
                 var studentEditList = data.result.studentEditList;
                 for (var i = 0; i < studentEditList.length; i++) {
-                    $("#p004UserNameTxt").val(studentEditList[i].username)
-                    $("#p004GenderTxt").val(studentEditList[i].gender);
+                    $("#p004UserNameTxt").val(studentEditList[i].username);
+                    console.log(studentEditList[i].gender)
+                    if (studentEditList[i].gender != "boy" && studentEditList[i].gender != "girl") {
+                        $("#p004Gender input:radio[name=gender][value='boy']").prop("checked", "true");
+                    } else {
+                        $("#p004Gender input:radio[name=gender][value='" + studentEditList[i].gender + "']").prop("checked", "true");
+                    }
                     $("#p004AgeTxt").val(studentEditList[i].age);
                     $("#p004ScoreTxt").val(studentEditList[i].score);
                     $("#p004StudentIdTxt").val(studentEditList[i].studentId);
@@ -219,8 +270,26 @@ define([ "common" ], function(common) {
                 if (data.code == "ok") {
                     alert("更新成功");
                     $("#p004UserEditDiv").dialog("close");
-                    var studentDtoList = data.result.studentDtoList;
-                    createTable(studentDtoList);
+                    var params = {};
+                    params["username"] = $("#p003UserNameTxt").val();
+                    params["gender"] = $("input:radio[name='gender']:checked").val();
+                    params["age"] = $("#p003AgeTxt").val();
+                    params["score"] = $("#p003ScoreTxt").val();
+                    $.ajax({
+                        url: "/" + getContextPath() + "/studentList",
+                        type: 'POST',
+                        data: JSON.stringify(params),
+                        contentType: "application/json",
+                        dataType: "json",
+                        cache: false,
+                        success: function(data) {
+
+                            if (data.code == "ok") {
+                                var studentDtoList = data.result.studentDtoList;
+                                createTable(studentDtoList);
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -248,6 +317,10 @@ define([ "common" ], function(common) {
                 success: function(data) {
 
                     var params = {};
+                    params["username"] = $("#p003UserNameTxt").val();
+                    params["gender"] = $("input:radio[name='gender']:checked").val();
+                    params["age"] = $("#p003AgeTxt").val();
+                    params["score"] = $("#p003ScoreTxt").val();
                     $.ajax({
                         url: "/" + getContextPath() + "/studentList",
                         type: 'POST',

@@ -23,7 +23,12 @@
         <tr>
           <th>性别</th>
           <td>
-            <input id="p004GenderTxt" name="gender" type="text" />
+          <div id="p004Gender">
+            <input type="radio" name="gender" value="boy" checked="checked" id="p004GenderBoyRadio"/>
+          <label>男</label>
+           <input type="radio" name="gender" value="girl" id="p004GenderGirlRadio"/>
+             <label>女</label>
+             </div>
           </td>
         </tr>
         <tr>

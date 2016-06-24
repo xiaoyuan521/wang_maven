@@ -3,10 +3,10 @@ package com.mvc.model;
 public class StudentModel {
 
     private int studentId;
-    private String username;
-    private String gender;
-    private String age;
-    private String score;
+    private String username=null;
+    private String gender=null;
+    private String age=null;
+    private String score=null;
     private String realPath;
     private String originalFilename;
     private String fileName;

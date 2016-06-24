@@ -2,6 +2,7 @@ package com.mvc.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mvc.dto.StudentDto;
 import com.mvc.model.StudentModel;
+import com.mysql.jdbc.StringUtils;
 
 @Repository
 public class StudentDaoImpl implements StudentDao {
@@ -22,8 +24,9 @@ public class StudentDaoImpl implements StudentDao {
      * 检索
      */
     @Override
-    public List<StudentDto> selectByCondition() {
+    public List<StudentDto> selectByCondition(StudentModel studentModel) {
 
+        List<Object> paramList = new ArrayList<Object>();
         final StringBuilder sql = new StringBuilder();
         sql.append(" SELECT");
         sql.append(" student_id, ");
@@ -35,10 +38,28 @@ public class StudentDaoImpl implements StudentDao {
         sql.append("  student");
         sql.append(" WHERE");
         sql.append(" 1=1 ");
+        if (!StringUtils.isNullOrEmpty(studentModel.getUsername())) {
+            sql.append(" AND username LIKE CONCAT('%', ?, '%')");
+            paramList.add(studentModel.getUsername());
+            System.out.println(paramList);
+        }
+        if (!StringUtils.isNullOrEmpty(studentModel.getAge())) {
+            sql.append(" AND age=?");
+            paramList.add(studentModel.getAge());
+        }
+        if (!StringUtils.isNullOrEmpty(studentModel.getScore())) {
+            sql.append(" AND score=?");
+            paramList.add(studentModel.getScore());
+        }
+        if (!StringUtils.isNullOrEmpty(studentModel.getGender())) {
+            sql.append(" AND gender=?");
+            paramList.add(studentModel.getGender());
+        }
 
-        Object[] paramer = new Object[]{};
+        System.out.println(sql.toString());
+        System.out.println(paramList);
 
-        List<StudentDto> studentList = JdbcTemelate.query(sql.toString(), paramer, new StudentRowMapper());
+        List<StudentDto> studentList = JdbcTemelate.query(sql.toString(), paramList.toArray(), new StudentRowMapper());
 
         return studentList;
     }

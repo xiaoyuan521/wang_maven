@@ -53,7 +53,7 @@ public class UserController {
     public Map<String, Object> studentList(@RequestBody StudentModel studentModel) {
         System.out.println("hahah");
 
-        List<StudentDto> studentDtoList = studentService.selectStudent();
+        List<StudentDto> studentDtoList = studentService.selectStudent(studentModel);
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("studentDtoList", studentDtoList);
@@ -73,7 +73,7 @@ public class UserController {
     public Map<String, Object> userAddInit(@RequestBody StudentModel studentModel) {
 
         studentService.addStudent(studentModel);
-        List<StudentDto> studentDtoList = studentService.selectStudent();
+        List<StudentDto> studentDtoList = studentService.selectStudent(studentModel);
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("studentDtoList", studentDtoList);
@@ -131,7 +131,7 @@ public class UserController {
     @ResponseBody
     public Map<String, Object> studentUpdate(StudentModel studentModel) {
         studentService.updateStudent(studentModel);
-        List<StudentDto> studentDtoList = studentService.selectStudent();
+        List<StudentDto> studentDtoList = studentService.selectStudent(studentModel);
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("studentDtoList", studentDtoList);

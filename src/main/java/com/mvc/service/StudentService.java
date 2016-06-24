@@ -8,7 +8,7 @@ import com.mvc.model.StudentModel;
 
 public interface StudentService {
 
-    public List<StudentDto> selectStudent();
+    public List<StudentDto> selectStudent(StudentModel studentModel);
 
     public void deleteStudent(int studentId);
 

@@ -17,8 +17,8 @@ public class StudentServiceImpl implements StudentService {
     StudentDao studentDao = null;
 
     @Override
-    public List<StudentDto> selectStudent() {
-        return studentDao.selectByCondition();
+    public List<StudentDto> selectStudent(StudentModel studentModel) {
+        return studentDao.selectByCondition(studentModel);
     }
 
     /**

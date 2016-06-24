@@ -7,7 +7,7 @@ import com.mvc.model.StudentModel;
 
 public interface StudentDao {
 
-    public List<StudentDto> selectByCondition();
+    public List<StudentDto> selectByCondition(StudentModel studentModel);
 
     public void delete(int studentId);
 
