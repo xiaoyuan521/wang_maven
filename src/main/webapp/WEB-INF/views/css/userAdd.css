@@ -4,5 +4,6 @@
 }
 
 .col-username, .col-gender, .col-age, .col-score, .col-delete {
+  max-width: 90px;
   width: 100px;
 }
