@@ -25,10 +25,10 @@
         <tr>
           <th>性别</th>
           <td>
-            <input type="radio" name="gender" value="boy" checked="checked" id="p003GenderBoyRadio"/>
-          <label>男</label>
-           <input type="radio" name="gender" value="girl" id="p003GenderGirlRadio"/>
-             <label>女</label>
+            <input type="radio" name="gender" value="boy" checked="checked" id="p003GenderBoyRadio" />
+            <label>男</label>
+            <input type="radio" name="gender" value="girl" id="p003GenderGirlRadio" />
+            <label>女</label>
           </td>
         </tr>
         <tr>
@@ -44,11 +44,17 @@
           </td>
         </tr>
         <tr>
+          <th>日期</th>
+          <td>
+            <input id="p003DateTxt" name="date" type="text" />
+          </td>
+        </tr>
+        <tr>
           <th></th>
           <td>
             <button type="button" id="p003UserAddBtn">登录</button>
-             <button type="button" id="p003StudentSearchBtn">查询</button>
-              <button type="button" id="p003ClearBtn">Clear</button>
+            <button type="button" id="p003StudentSearchBtn">查询</button>
+            <button type="button" id="p003ClearBtn">Clear</button>
           </td>
         </tr>
       </table>
@@ -78,7 +84,7 @@
   </form>
 
   <div style="padding-top: 30px;">学生信息查询</div>
-    <div id="p003StudentTable" style="width:505px;"></div>
+  <div id="p003StudentTable" style="width: 505px;"></div>
 </body>
 </html>
-  <jsp:include page="./userEdit.jsp" />
+<jsp:include page="./userEdit.jsp" />

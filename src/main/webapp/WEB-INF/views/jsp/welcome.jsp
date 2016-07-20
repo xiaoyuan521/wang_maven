@@ -8,8 +8,10 @@
 <script src="${baseUrl}js/jquery.json-2.4.js" type="text/JavaScript"></script>
 <script src="${baseUrl}js/jquery.validate.js" type="text/JavaScript"></script>
 <script src="${baseUrl}js/jquery.validate.min.js" type="text/JavaScript"></script>
+  <script src="${baseUrl}js/jquery-ui.js"></script>
+  <script src="${baseUrl}js/jquery-ui-i18n.js" type="text/JavaScript"></script>
 <script src="${baseUrl}js/jquery-ui.min.js" type="text/JavaScript"></script>
-<link type="text/css" href="${baseUrl}css/jquery-ui.css" rel="stylesheet" />
+  <link type="text/css" href="${baseUrl}css/jquery-ui.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/common.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/top.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/userAdd.css" rel="stylesheet" />
