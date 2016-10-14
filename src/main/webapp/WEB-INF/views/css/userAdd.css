@@ -3,7 +3,7 @@
   color: red;
 }
 
-.col-username, .col-gender, .col-age, .col-score, .col-delete {
+.col-username, .col-gender, .col-age, .col-score, .col-delete,.col-inforName,.col-date,.col-roleName,.col-gamestatus,.col-allGamesCount,.col-successCount,.col-rate {
   width: 100px;
   max-width: 90px;
 }

@@ -5,9 +5,17 @@
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="${baseUrl}js/jquery-2.1.4.min.js"></script>
-<script src="${baseUrl}js/jquery.json-2.4.js"></script>
-<link type="text/css" href="${baseUrl}css/login.css" rel="stylesheet" />
+<script src="${baseUrl}js/jquery-2.1.4.min.js" type="text/JavaScript"></script>
+<script src="${baseUrl}js/jquery.json-2.4.js" type="text/JavaScript"></script>
+<script src="${baseUrl}js/jquery.validate.js" type="text/JavaScript"></script>
+<script src="${baseUrl}js/jquery.validate.min.js" type="text/JavaScript"></script>
+<script src="${baseUrl}js/jquery-ui.js"></script>
+<script src="${baseUrl}js/jquery-ui-i18n.js" type="text/JavaScript"></script>
+<script src="${baseUrl}js/jquery-ui.min.js" type="text/JavaScript"></script>
+<link type="text/css" href="${baseUrl}css/jquery-ui.css" rel="stylesheet" />
+<link type="text/css" href="${baseUrl}css/common.css" rel="stylesheet" />
+<link type="text/css" href="${baseUrl}css/top.css" rel="stylesheet" />
+<link type="text/css" href="${baseUrl}css/userAdd.css" rel="stylesheet" />
 <script data-main="${baseUrl}js/main" src="${baseUrl}js/require.js"></script>
 <title>SpringMvc</title>
 </head>

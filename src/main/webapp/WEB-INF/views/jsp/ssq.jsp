@@ -5,7 +5,6 @@
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="${baseUrl}js/jquery-2.1.4.min.js"></script>
 <script>
 $("#sayHelloButton").on("click",function(){
 

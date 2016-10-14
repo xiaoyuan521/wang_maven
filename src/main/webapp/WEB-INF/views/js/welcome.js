@@ -5,7 +5,7 @@
     init();
 });*/
 
-define([ "common", "userAdd","ssq"], function(common, userAdd,ssq) {
+define([ "common", "userAdd","ssq", "killing"], function(common, userAdd,ssq,killing) {
 
     function init() {
         initListener();

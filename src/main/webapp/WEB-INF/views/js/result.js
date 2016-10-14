@@ -31,10 +31,9 @@ define([ "common", "userAdd", "welcome" ], function(common, userAdd, welcome) {
                     success: function(data) {
 
                         if(data.code == "ok"){
-                            alert("文件下载成功");
+                            alert("文件下载成功，下载到C:/Users/wang_changyuan/upload");
                         }
                     }
-
             });
         });
     }

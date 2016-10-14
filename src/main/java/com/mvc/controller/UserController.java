@@ -165,7 +165,7 @@ public class UserController {
          */
 
         String fileName = file.getOriginalFilename();
-        File targetFile = new File("C:/Users/wang_changyuan/git/wangcyTest/WebContent/WEB-INF/views/upload", fileName);
+        File targetFile = new File("C:/Users/wang_changyuan/git/wang_maven/src/main/webapp/WEB-INF/views/upload", fileName);
         if (targetFile.exists()) {
             targetFile.delete();
         }
@@ -263,7 +263,7 @@ public class UserController {
         model.addAttribute("hello", "hello");
         System.out.println("hahah");
 
-        return "ssq";
+        return "Hello";
     }
 
 }

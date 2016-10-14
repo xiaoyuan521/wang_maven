@@ -60,7 +60,7 @@
       </table>
     </form>
   </div>
-
+   <!--如果想让文件上传成功  把 useradd.js和killing.js 里面的 initDate 和validate 注释掉就行-->
   <form id="p003UserUploadForm" enctype="multipart/form-data" action="<%=request.getContextPath()%>/fileUpload"
     method="POST">
     <table>
@@ -84,7 +84,7 @@
   </form>
 
   <div style="padding-top: 30px;">学生信息查询</div>
-  <div id="p003StudentTable" style="width: 505px;"></div>
+  <div id="p003StudentTable" style="width: 488px;"></div>
 </body>
 </html>
 <jsp:include page="./userEdit.jsp" />

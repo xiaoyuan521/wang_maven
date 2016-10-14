@@ -113,6 +113,7 @@ define([ "common" ], function(common) {
                         $("#p003GenderBoyRadio").prop("checked", "true");
                         $("#p003AgeTxt").val("");
                         $("#p003ScoreTxt").val("");
+                        $("#p003DateTxt").val("");
                         var params = {};
                         params["username"] = $("#p003UserNameTxt").val();
                         params["gender"] = $("input:radio[name='gender']:checked").val();
@@ -174,6 +175,8 @@ define([ "common" ], function(common) {
             $("#p003GenderBoyRadio").prop("checked", "true");
             $("#p003AgeTxt").val("");
             $("#p003ScoreTxt").val("");
+            $("#p003DateTxt").val("");
+
         });
 
     }
