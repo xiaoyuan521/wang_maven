@@ -29,6 +29,11 @@ public class KillingController {
         return "killing";
     }
 
+    @RequestMapping(value = "/killRateSearch")
+    public String killRateSearch() {
+        return "killRateSearch";
+    }
+
     /**
      * player一览
      *
@@ -41,10 +46,14 @@ public class KillingController {
 
         List<InformationDto> informationDtoList = playerService.selectPlayer();
         List<RoleDto> roleDtoList = playerService.selectRole();
+        List<PlayerDto> playerDtoList = playerService.selectPlayerList();
+        List<GameCountDto> informationRateList = playerService.selectInformationList();
 
         Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("informationDtoList", informationDtoList);
         resultMap.put("roleDtoList", roleDtoList);
+        resultMap.put("playerDtoList", playerDtoList);
+        resultMap.put("informationRateList", informationRateList);
 
         return bulidReturnMap("ok", resultMap);
 

@@ -1,7 +1,7 @@
 /**
  *
  */
-define([ "userAdd","ssq","killing"], function(userAdd,ssq,killing) {
+define([ "userAdd","ssq","killing","killRateSearch"], function(userAdd,ssq,killing,killRateSearch) {
 
     function init() {
         loadPage();
@@ -29,6 +29,9 @@ define([ "userAdd","ssq","killing"], function(userAdd,ssq,killing) {
 
             if (pagename == "killing") {
                 killing.init();
+            }
+            if (pagename == "killRateSearch") {
+                killRateSearch.init();
             }
         })
     }

@@ -1,9 +1,8 @@
 require.config({
-    paths: {
-    }
+    paths: {}
 });
 
-require(["welcome" ,"userAdd","result","ssq","datatable","killing"], function(welcome,userAdd,result,ssq,datatable,killing) {
+require([ "welcome", "userAdd", "result", "ssq", "datatable", "killing", "killRateSearch" ], function(welcome, userAdd, result, ssq, datatable, killing, killRateSearch) {
     $(function() {
         welcome.init();
         userAdd.init();
@@ -11,5 +10,6 @@ require(["welcome" ,"userAdd","result","ssq","datatable","killing"], function(we
         ssq.init();
         datatable.extend();
         killing.init();
+        killRateSearch.init();
     });
 });

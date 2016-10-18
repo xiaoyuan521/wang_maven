@@ -7,8 +7,7 @@ define([ "common" ], function(common) {
         initFormValidate();
         initListener();
 
-    }
-    ;
+    };
 
     /**
      * 下拉初期化
@@ -27,21 +26,24 @@ define([ "common" ], function(common) {
 
                 if (data.code == "ok") {
                     for (var i = 0; i < data.result.informationDtoList.length; i++) {
-
                         var option = $("<option></option>").text(data.result.informationDtoList[i].playerName).val(data.result.informationDtoList[i].id);
                         $("#p004PlayerNameSelect").append(option);
                     }
 
                     for (var j = 0; j < data.result.roleDtoList.length; j++) {
-
                         var option = $("<option></option>").text(data.result.roleDtoList[j].role).val(data.result.roleDtoList[j].id);
                         $("#p004RoleSelect").append(option);
                     }
+                    // 初期化一览
+                    $("#p004PlayerInforInsertSearch").text("");
+                    $("#p004PlayerInforInsertSearch").text("玩家信息录入查询");
+                    var playerDtoList = data.result.playerDtoList;
+
+                    createTable(playerDtoList);
 
                 }
             }
         });
-
     }
 
     /**
@@ -67,11 +69,13 @@ define([ "common" ], function(common) {
             rules: {
                 date: {
                     required: true,
+                    date:true
                 }
             },
             messages: {
                 date: {
-                    required: "必须入力日期"
+                    required: "必须入力日期",
+                    date:"请输入合法日期"
                 }
             }
         });
@@ -126,27 +130,6 @@ define([ "common" ], function(common) {
 
         });
 
-        // 检索按钮押下
-        $("#p004SearchBtn").on("click", function() {
-            $("#p004PlayerInforInsertSearch").text("");
-            $("#p004PlayerInforInsertSearch").text("玩家胜率查询");
-            var inforMationParam = {};
-            $.ajax({
-                url: "/" + getContextPath() + "/gameCountSearch",
-                type: "POST",
-                data: JSON.stringify(inforMationParam),
-                contentType: "application/json",
-                dataType: "json",
-                cache: false,
-                success: function(data) {
-                    if (data.code == "ok") {
-                        var informationDtoList = data.result.informationDtoList;
-                        createRateTable(informationDtoList);
-                    }
-                }
-            });
-        });
-
     }
     /**
      * 创建登录信息一览
@@ -173,37 +156,7 @@ define([ "common" ], function(common) {
         });
     }
 
-    /**
-     * 创建胜率一览
-     */
-    function createRateTable(informationDtoList) {
-        $("#p004PlayerTable").hide();
-        $("#p004InformationTable").show();
-        $("#p004InformationTable").datatable({
-            data: informationDtoList,
-            columns: [ {
-                name: "inforName",
-                text: "用户名"
-            }, {
-                name: "allGamesCount",
-                text: "总局数"
-            }, {
-                name: "successCount",
-                text: "胜局"
-            }, {
-                name: "rate",
-                text: "胜率",
-                fn: rateHandler
-            } ]
-        });
-    }
-
-    function rateHandler(value, rowValue, tdDom) {
-
-        return value + "%";
-    }
-
-    //胜率显示
+    // 胜率显示
     function playerGameStatusHandler(value, rowValue, tdDom) {
         if (value == "success") {
             return "赢";
