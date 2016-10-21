@@ -18,40 +18,45 @@
         <tr>
           <th>玩家姓名</th>
           <td>
-           <select style="width:200px" id="p004PlayerNameSelect" name="name">
-           </select>
+            <select style="width: 200px" id="p004PlayerNameSelect" name="name">
+            </select>
           </td>
         </tr>
         <tr>
           <th>玩家角色</th>
           <td>
-            <select style="width:200px" id="p004RoleSelect" name="roleId">
-           </select>
+            <select style="width: 200px" id="p004RoleSelect" name="roleId">
+            </select>
           </td>
         </tr>
         <tr>
           <th>日期</th>
           <td>
-            <input id="p004Date" name="date" type="text" style="width:200px"  />
+            <input id="p004Date" name="date" type="text" style="width: 200px" />
           </td>
         </tr>
         <tr>
           <th>胜负状况</th>
           <td>
-            <input type="radio" name="gameStatus" value="equal" checked="checked" id="p004EqualRadio"/><label>平</label>
-            <input type="radio" name="gameStatus" value="success" id="p004SuccessRadio"/><label>胜利</label>
-            <input type="radio" name="gameStatus" value="fail"id="p004FailRadio"/><label>失败</label>
+            <div style="width: 200px">
+              <input type="radio" name="gameStatus" value="equal" checked="checked" id="p004EqualRadio" />
+              <label for="p004EqualRadio">平</label>
+              <input type="radio" name="gameStatus" value="success" id="p004SuccessRadio" />
+              <label for="p004SuccessRadio">胜利</label>
+              <input type="radio" name="gameStatus" value="fail" id="p004FailRadio" />
+              <label for="p004FailRadio">失败</label>
+            </div>
           </td>
         </tr>
         <tr>
-        <td>
-            <button type="button" id="p004AddBtn" >录入</button>
+          <td>
+            <button type="button" id="p004AddBtn">录入</button>
           </td>
         </tr>
       </table>
     </form>
   </div>
-   <div style="padding-top: 30px;" id="p004PlayerInforInsertSearch"></div>
+  <div style="padding-top: 30px;" id="p004PlayerInforInsertSearch"></div>
   <div id="p004PlayerTable" style="width: 381px;"></div>
 </body>
 </html>

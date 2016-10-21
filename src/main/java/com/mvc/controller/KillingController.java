@@ -70,16 +70,37 @@ public class KillingController {
     public Map<String, Object> playerAdd(@RequestBody PlayerModel playerModel) {
 
         playerService.addPlayer(playerModel);
-
         String inforId = playerModel.getInforId();
-        String gameStatus = playerModel.getGameStatus();
         List<GameCountDto> informationList = playerService.selectInformationList(inforId);
         if (informationList.size() == 0) {
-            playerService.addInformation(inforId, gameStatus);
+            playerService.addInformation(playerModel);
         } else {
             int successCount = informationList.get(0).getSuccessCount();
             int allGamesCount = informationList.get(0).getAllGamesCount();
-            playerService.updateInformation(inforId, gameStatus, successCount, allGamesCount);
+            int allWerewolfCount = informationList.get(0).getAllWerewolfCount();
+            int successWerewolfCount = informationList.get(0).getSuccessWerewolfCount();
+            int allProphetCount = informationList.get(0).getAllProphetCount();
+            int successProphetCount = informationList.get(0).getSuccessProphetCount();
+            int allWitchCount = informationList.get(0).getAllWitchCount();
+            int successWitchCount = informationList.get(0).getSuccessWitchCount();
+            int allHunterCount = informationList.get(0).getAllHunterCount();
+            int successHunterCount = informationList.get(0).getSuccessHunterCount();
+            int allCivilianCount = informationList.get(0).getAllCivilianCount();
+            int successCivilianCount = informationList.get(0).getSuccessCivilianCount();
+
+            playerModel.setSuccessCount(successCount);
+            playerModel.setAllGamesCount(allGamesCount);
+            playerModel.setAllWerewolfCount(allWerewolfCount);
+            playerModel.setSuccessWerewolfCount(successWerewolfCount);
+            playerModel.setAllProphetCount(allProphetCount);
+            playerModel.setSuccessProphetCount(successProphetCount);
+            playerModel.setAllWitchCount(allWitchCount);
+            playerModel.setSuccessWitchCount(successWitchCount);
+            playerModel.setAllHunterCount(allHunterCount);
+            playerModel.setSuccessHunterCount(successHunterCount);
+            playerModel.setAllCivilianCount(allCivilianCount);
+            playerModel.setSuccessCivilianCount(successCivilianCount);
+            playerService.updateInformation(playerModel);
         }
         List<PlayerDto> playerDtoList = playerService.selectPlayerList();
         Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -99,9 +120,27 @@ public class KillingController {
     @ResponseBody
     public Map<String, Object> gameCountSearch(@RequestBody PlayerModel playerModel) {
 
-        List<GameCountDto> informationDtoList = playerService.selectInformationList();
+        List<GameCountDto> informationDtoList = playerService.selectInformationListByCondition(playerModel);
         Map<String, Object> resultMap = new HashMap<String, Object>();
         resultMap.put("informationDtoList", informationDtoList);
+
+        return bulidReturnMap("ok", resultMap);
+
+    }
+
+    /**
+     * 检索游戏记录查询
+     *
+     * @param playerModel
+     * @return
+     */
+    @RequestMapping(value = "playerRecordSearch", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> playerRecordSearch(@RequestBody PlayerModel playerModel) {
+
+        List<PlayerDto> playerListList = playerService.selectPlayerListByCondition(playerModel);
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("playerListList", playerListList);
 
         return bulidReturnMap("ok", resultMap);
 
