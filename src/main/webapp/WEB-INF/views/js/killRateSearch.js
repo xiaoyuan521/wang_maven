@@ -122,8 +122,31 @@ define([ "common" ], function(common) {
                 $("#p005PlayerTable").hide();
                 $("#p005PlayerNameSelect").val("");
 
+                var params = {};
+                $.ajax({
+                    url: "/" + getContextPath() + "/killing/init",
+                    type: 'POST',
+                    data: JSON.stringify(params),
+                    contentType: "application/json",
+                    dataType: "json",
+                    cache: false,
+                    success: function(data) {
+
+                        if (data.code == "ok") {
+                            // 胜率一览
+                            $("#p005PlayerRateSearch").text("");
+                            $("#p005PlayerRateSearch").text("玩家胜率查询");
+                            var informationRateList = data.result.informationRateList;
+                            createRateTable(informationRateList);
+                        }
+                    }
+                });
+
             } else {
-                 $("#p005PlayerNameSelect").val("");
+                $("#p005PlayerNameSelect").val("");
+                $("#p005RoleSelect").val("");
+                $("#p005Date").val("");
+                $("#p005AllRadio").prop("checked", true);
                 $("#p005RecordSearch").show();
                 $("#p005RoleTr").show();
                 $("#p005RoleDateTr").show();
@@ -136,6 +159,26 @@ define([ "common" ], function(common) {
                 $("#p005PlayerRateSearch").text("游戏记录查询");
                 $("#p005InformationTable").hide();
                 $("#p005PlayerTable").show();
+
+                var params = {};
+                $.ajax({
+                    url: "/" + getContextPath() + "/killing/init",
+                    type: 'POST',
+                    data: JSON.stringify(params),
+                    contentType: "application/json",
+                    dataType: "json",
+                    cache: false,
+                    success: function(data) {
+
+                        if (data.code == "ok") {
+
+                            // 游戏记录查询
+                            var playerDtoList = data.result.playerDtoList;
+                            createTable(playerDtoList);
+                        }
+                    }
+                });
+
             }
         });
 
