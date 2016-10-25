@@ -11,6 +11,8 @@
 <script src="${baseUrl}js/jquery-ui.js"></script>
 <script src="${baseUrl}js/jquery-ui-i18n.js" type="text/JavaScript"></script>
 <script src="${baseUrl}js/jquery-ui.min.js" type="text/JavaScript"></script>
+<link rel="icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
 <link type="text/css" href="${baseUrl}css/jquery-ui.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/login.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/common.css" rel="stylesheet" />
