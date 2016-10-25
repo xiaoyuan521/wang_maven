@@ -7,13 +7,18 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Microad狼人杀系统</title>
-<link type="text/css" href="${baseUrl}css/login.css" rel="stylesheet" />
-<link rel="icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
-<script src="${baseUrl}js/jquery-2.1.4.min.js"></script>
-<script src="${baseUrl}js/jquery.json-2.4.js"></script>
-<script data-main="${baseUrl}js/login" src="${baseUrl}js/require.js"></script>
-
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://"
+            + request.getServerName() + ":" + request.getServerPort()
+            + path;
+%>
+<link type="text/css" href="<%=basePath%>/css/login.css" rel="stylesheet" />
+<link rel="icon" href="<%=basePath%>/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="<%=basePath%>/images/favicon.ico" type="image/x-icon" />
+<script src="<%=basePath%>/js/jquery-2.1.4.min.js"></script>
+<script src="<%=basePath%>/js/jquery.json-2.4.js"></script>
+<script data-main="<%=basePath%>/js/login" src="<%=basePath%>/js/require.js"></script>
 </head>
 <body bgcolor="#d7dfe1" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
   <div class="loginMain">
@@ -47,7 +52,7 @@
     </div>
     <div class="background8"></div>
     <div class="loginFooter">
-      <img src="${baseUrl}images/login/logo.png">
+      <img src="<%=basePath%>/images/login/logo.png">
     </div>
   </div>
 </body>

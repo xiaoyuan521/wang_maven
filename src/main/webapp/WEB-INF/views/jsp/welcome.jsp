@@ -4,33 +4,45 @@
 <html lang="ja">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="${baseUrl}js/jquery-2.1.4.min.js" type="text/JavaScript"></script>
-<script src="${baseUrl}js/jquery.json-2.4.js" type="text/JavaScript"></script>
-<script src="${baseUrl}js/jquery.validate.js" type="text/JavaScript"></script>
-<script src="${baseUrl}js/jquery.validate.min.js" type="text/JavaScript"></script>
-<script src="${baseUrl}js/jquery-ui.js"></script>
-<script src="${baseUrl}js/jquery-ui-i18n.js" type="text/JavaScript"></script>
-<script src="${baseUrl}js/jquery-ui.min.js" type="text/JavaScript"></script>
-<link rel="icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
-<link type="text/css" href="${baseUrl}css/jquery-ui.css" rel="stylesheet" />
-<link type="text/css" href="${baseUrl}css/login.css" rel="stylesheet" />
-<link type="text/css" href="${baseUrl}css/common.css" rel="stylesheet" />
-<link type="text/css" href="${baseUrl}css/top.css" rel="stylesheet" />
-<link type="text/css" href="${baseUrl}css/userAdd.css" rel="stylesheet" />
-<script data-main="${baseUrl}js/main" src="${baseUrl}js/require.js"></script>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://"
+            + request.getServerName() + ":" + request.getServerPort()
+            + path;
+%>
+<script src="<%=basePath%>/js/jquery-2.1.4.min.js" type="text/JavaScript"></script>
+<script src="<%=basePath%>/js/jquery.json-2.4.js" type="text/JavaScript"></script>
+<script src="<%=basePath%>/js/jquery.validate.js" type="text/JavaScript"></script>
+<script src="<%=basePath%>/js/jquery.validate.min.js" type="text/JavaScript"></script>
+<script src="<%=basePath%>/js/jquery-ui.js"></script>
+<script src="<%=basePath%>/js/jquery-ui-i18n.js" type="text/JavaScript"></script>
+<script src="<%=basePath%>/js/jquery-ui.min.js" type="text/JavaScript"></script>
+<link rel="icon" href="<%=basePath%>/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="<%=basePath%>/images/favicon.ico" type="image/x-icon" />
+<link type="text/css" href="<%=basePath%>/css/jquery-ui.css" rel="stylesheet" />
+<link type="text/css" href="<%=basePath%>/css/login.css" rel="stylesheet" />
+<link type="text/css" href="<%=basePath%>/css/common.css" rel="stylesheet" />
+<link type="text/css" href="<%=basePath%>/css/top.css" rel="stylesheet" />
+<link type="text/css" href="<%=basePath%>/css/userAdd.css" rel="stylesheet" />
+<script data-main="<%=basePath%>/js/main" src="<%=basePath%>/js/require.js"></script>
 <title>SpringMvc</title>
 </head>
 <body>
   <!-- head -->
   <div class="header">
 
-    <div >
-      <div style="display: inline-block"><img id="p001LogImg" src="${baseUrl}images/home/logo.png" style="width: 300px; height: 100px; margin-left: 70px;"></div>
-      <div style="display: inline-block;float: right;padding-right: 30px;padding-top: 20px;"><a href="javascript:;"> <img src="${baseUrl}images/home/close.png" id="p003BackLoginBtn"/></a></div>
-      <div style="display: inline-block;float: right; color: blue;padding-top: 10px;padding-left: 40px;">
-            <p id="dateTimeShow"  style="padding-left: 20px; color: blue;background:url(${baseUrl}images/home/kuang.png) no-repeat;height:90px;width:250px;line-height:50px;font-size:12px;"></p>
-          </div>
+    <div>
+      <div style="display: inline-block">
+        <img id="p001LogImg" src="<%=basePath%>/images/home/logo.png"
+          style="width: 300px; height: 100px; margin-left: 70px;">
+      </div>
+      <div style="display: inline-block; float: right; padding-right: 30px; padding-top: 20px;">
+        <a href="javascript:;"> <img src="<%=basePath%>/images/home/close.png" id="p003BackLoginBtn" /></a>
+      </div>
+      <div style="display: inline-block; float: right; color: blue; padding-top: 10px; padding-left: 40px;">
+        <p id="dateTimeShow"
+          style="padding-left: 20px; color: blue;background:url(<%=basePath%>/images/home/kuang.png) no-repeat;height:90px;width:250px;line-height:50px;font-size:12px;"></p>
+      </div>
     </div>
   </div>
 
@@ -54,8 +66,10 @@
 
 
   <div class="main" id="p002WelcomeDiv">
-   <div style="text-align: center; "> <h1>欢迎来到wangcyシステム管理画面</h1>
-    <h4>请点击左侧的菜单选择您要进入的画面</h4></div>
+    <div style="text-align: center;">
+      <h1>欢迎来到wangcyシステム管理画面</h1>
+      <h4>请点击左侧的菜单选择您要进入的画面</h4>
+    </div>
   </div>
 
 </body>
