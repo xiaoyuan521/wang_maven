@@ -152,6 +152,8 @@ public class StudentDaoImpl implements StudentDao {
         sql.append(" ? ");
         sql.append(" ) ");
 
+        System.out.println(sql.toString());
+        System.out.println(studentModel.getUsername());
         Object[] paramer = new Object[]{studentModel.getUsername(), studentModel.getAge(), studentModel.getScore(), studentModel.getGender()};
         JdbcTemelate.update(sql.toString(), paramer);
 

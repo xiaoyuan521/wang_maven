@@ -4,40 +4,50 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="renderer" content="webkit">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Microad狼人杀系统</title>
+<link type="text/css" href="${baseUrl}css/login.css" rel="stylesheet" />
+<link rel="icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="${baseUrl}images/favicon.ico" type="image/x-icon" />
 <script src="${baseUrl}js/jquery-2.1.4.min.js"></script>
 <script src="${baseUrl}js/jquery.json-2.4.js"></script>
-<link type="text/css" href="${baseUrl}css/login.css" rel="stylesheet" />
 <script data-main="${baseUrl}js/login" src="${baseUrl}js/require.js"></script>
-<title>SpringMvc</title>
-</head>
-<body>
 
-  <div id="p001loginDiv">
-    <div class="tableDiv bgcolor-normal-20">
-      <form id="p001loginForm">
-        <table>
-          <tr>
-            <th></th>
-            <td>
-              <input type="text" id="p001UsernameTxt" name="username" />
-            </td>
-          </tr>
-          <tr>
-            <th></th>
-            <td>
-              <input type="password" id="p001UserPasswordTxt" name="password" />
-            </td>
-          </tr>
-          <tr>
-            <th></th>
-            <td>
-              <button type="button" id="p001LoginBtn" value="">login</button>
-              <button type="button" id="p002WelcomeBtn" value="">welcome</button>
-            </td>
-          </tr>
-        </table>
-      </form>
+</head>
+<body bgcolor="#d7dfe1" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+  <div class="loginMain">
+    <div class="loginHeader">
+      <div class="back_top">
+        <span id="dateShow"></span>
+      </div>
+    </div>
+    <div class="background3"></div>
+    <div class="background4"></div>
+    <div class="background5"></div>
+    <div class="inputContent">
+      <div class="nameandpassword">
+        <span>用户名：</span>
+        <input type="text" id="p001UsernameTxt" name="username" class="username" />
+
+        <span id="spname" class="wenzimiaoshu">请输入用户名</span>
+      </div>
+      <div class="nameandpassword">
+        <span>密码：</span>
+        <input type="password" id="p001UserPasswordTxt" name="password" type="password" class="password" />
+        <span id="sppassword" class="wenzimiaoshu" style="top: 3px;">请输入登录密码</span>
+      </div>
+    </div>
+    <div class="button">
+      <div id="p001LoginBtn" class="loginbottom">
+        <span>登 录</span>
+        <a href="javascript:void(0)" id="p002WelcomeBtn">welcome</a>
+      </div>
+
+    </div>
+    <div class="background8"></div>
+    <div class="loginFooter">
+      <img src="${baseUrl}images/login/logo.png">
     </div>
   </div>
 </body>

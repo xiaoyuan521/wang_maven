@@ -6,6 +6,7 @@
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid black;
+background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d5b76), color-stop(1, #6c7a95));
 }
 
 .left {
@@ -34,3 +35,6 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.header .site_links {float:left;height:34px;line-height:34px;padding:0 4px;font-weight:normal;background-position:0 -163px;}
+.header .site{position:absolute;right:10px; z-index:1;}
