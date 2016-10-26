@@ -1,33 +1,37 @@
 .header {
-  position:absolute;
+  position: absolute;
   left: 0px;
-  top:0px;
+  top: 0px;
   height: 100px;
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid black;
-background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d5b76), color-stop(1, #6c7a95));
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d5b76),
+    color-stop(1, #6c7a95));
 }
 
 .left {
-  position:absolute;
+  position: absolute;
   left: 0px;
-  top:100px;
+  top: 100px;
   bottom: 0px;
   width: 200px;
   overflow: hidden;
   border-right: 1px solid black;
 }
+
 .subMenu {
   margin-left: 20px;
   margin-top: 5px;
 }
+
 .menu {
   margin-left: 20px;
   margin-top: 20px;
 }
+
 .main {
-  position:absolute;
+  position: absolute;
   top: 120px;
   left: 220px;
   right: 0px;
@@ -36,5 +40,40 @@ background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d5b7
   overflow-x: hidden;
 }
 
-.header .site_links {float:left;height:34px;line-height:34px;padding:0 4px;font-weight:normal;background-position:0 -163px;}
-.header .site{position:absolute;right:10px; z-index:1;}
+.header .site_links {
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 4px;
+  font-weight: normal;
+  background-position: 0 -163px;
+}
+
+.header .site {
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}
+
+.navbar-inner {
+  background: #4d5b76;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4d5b76),
+    color-stop(1, #6c7a95));
+  background: -ms-linear-gradient(bottom, #4d5b76, #6c7a95);
+  background: -moz-linear-gradient(center bottom, #4d5b76 0%, #6c7a95 100%);
+  background: -o-linear-gradient(bottom, #4d5b76, #6c7a95);
+  filter: progid:dximagetransform.microsoft.gradient(startColorStr='#4d5b76',
+    EndColorStr='#6c7a95');
+  -ms-filter:
+    "progid:DXImageTransform.Microsoft.gradient(startColorStr='#6c7a95',EndColorStr='#4d5b76')";
+  padding: 0em 1em;
+  margin: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 0px;
+  border-bottom: none;
+}

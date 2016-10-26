@@ -26,7 +26,6 @@ define([ "common" ], function(common) {
             changeYear: true,
             dateFormat: "yy/mm/dd"
         });
-        $("#p003DateTxt").datepicker('setDate', new Date());
     }
 
     /**

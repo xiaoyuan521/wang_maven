@@ -31,7 +31,7 @@
   <!-- head -->
   <div class="header">
 
-    <div>
+    <div class="navbar-inner">
       <div style="display: inline-block">
         <img id="p001LogImg" src="<%=basePath%>/images/home/logo.png"
           style="width: 300px; height: 100px; margin-left: 70px;">
