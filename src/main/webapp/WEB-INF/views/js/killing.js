@@ -7,7 +7,8 @@ define([ "common" ], function(common) {
         initFormValidate();
         initListener();
 
-    };
+    }
+    ;
 
     /**
      * 下拉初期化
@@ -69,13 +70,13 @@ define([ "common" ], function(common) {
             rules: {
                 date: {
                     required: true,
-                    date:true
+                    date: true
                 }
             },
             messages: {
                 date: {
                     required: "必须入力日期",
-                    date:"请输入合法日期"
+                    date: "请输入合法日期"
                 }
             }
         });

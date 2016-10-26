@@ -26,6 +26,7 @@ define([ "common" ], function(common) {
             changeYear: true,
             dateFormat: "yy/mm/dd"
         });
+        $("#p003DateTxt").datepicker('setDate', new Date());
     }
 
     /**
@@ -54,6 +55,7 @@ define([ "common" ], function(common) {
                 },
                 date: {
                     required: true,
+                    date: true
                 }
             },
             messages: {
@@ -76,7 +78,8 @@ define([ "common" ], function(common) {
                     maxlength: "长度不能超过85字符"
                 },
                 date: {
-                    required: "必须入力日期"
+                    required: "必须入力日期",
+                    date: "请输入合法日期"
                 }
             }
         });

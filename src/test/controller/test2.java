@@ -1,4 +1,4 @@
-package com.mvc.controller;
+package test.controller;
 
 import java.util.ArrayList;
 import java.util.Comparator;
