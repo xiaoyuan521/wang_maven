@@ -10,6 +10,7 @@ import com.mvc.dto.GameCountDto;
 import com.mvc.dto.InformationDto;
 import com.mvc.dto.PlayerDto;
 import com.mvc.dto.RoleDto;
+import com.mvc.model.InformationModel;
 import com.mvc.model.PlayerModel;
 
 @Service
@@ -38,6 +39,17 @@ public class PlayerServiceImpl implements PlayerService {
         playerDao.insert(playerModel);
 
     }
+
+    /**
+     * 新增玩家
+     */
+    @Override
+    public void addKiller(InformationModel informationModel) {
+
+        playerDao.insertPlayer(informationModel);
+
+    }
+
 
     /**
      * 新增玩家游戏记录

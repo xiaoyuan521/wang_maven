@@ -83,7 +83,9 @@ define([ "common" ], function(common) {
             }
         });
     }
-
+    /**
+     *按钮操作
+     */
     function initListener() {
 
         /**

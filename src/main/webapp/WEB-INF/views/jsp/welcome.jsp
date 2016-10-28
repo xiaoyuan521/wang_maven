@@ -17,6 +17,13 @@
 <script src="<%=basePath%>/js/jquery-ui.js"></script>
 <script src="<%=basePath%>/js/jquery-ui-i18n.js" type="text/JavaScript"></script>
 <script src="<%=basePath%>/js/jquery-ui.min.js" type="text/JavaScript"></script>
+<script type="text/javascript" src="<%=basePath%>/js/plupload.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/plupload.gears.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/plupload.silverlight.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/plupload.flash.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/plupload.browserplus.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/plupload.html4.js"></script>
+<script type="text/javascript" src="<%=basePath%>/js/plupload.html5.js"></script>
 <link rel="icon" href="<%=basePath%>/images/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="<%=basePath%>/images/favicon.ico" type="image/x-icon" />
 <link type="text/css" href="<%=basePath%>/css/jquery-ui.css" rel="stylesheet" />
@@ -24,6 +31,7 @@
 <link type="text/css" href="<%=basePath%>/css/common.css" rel="stylesheet" />
 <link type="text/css" href="<%=basePath%>/css/top.css" rel="stylesheet" />
 <link type="text/css" href="<%=basePath%>/css/userAdd.css" rel="stylesheet" />
+<link type="text/css" href="<%=basePath%>/css/killerAdd.css" rel="stylesheet" />
 <script data-main="<%=basePath%>/js/main" src="<%=basePath%>/js/require.js"></script>
 <title>SpringMvc</title>
 </head>
@@ -56,12 +64,16 @@
       <a href="javascript:void(0)" data-pagename="ssq">双色球</a>
     </div>
     <div class="menu">狼人杀</div>
+     <div class="subMenu">
+      <a href="javascript:void(0)" data-pagename="killerAdd">玩家信息录入</a>
+    </div>
     <div class="subMenu">
       <a href="javascript:void(0)" data-pagename="killing">狼人杀录入</a>
     </div>
     <div class="subMenu">
       <a href="javascript:void(0)" data-pagename="killRateSearch">狼人杀胜率检索</a>
     </div>
+
   </div>
 
 

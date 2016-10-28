@@ -6,6 +6,7 @@ import com.mvc.dto.GameCountDto;
 import com.mvc.dto.InformationDto;
 import com.mvc.dto.PlayerDto;
 import com.mvc.dto.RoleDto;
+import com.mvc.model.InformationModel;
 import com.mvc.model.PlayerModel;
 
 public interface PlayerService {
@@ -29,5 +30,7 @@ public interface PlayerService {
     public List<GameCountDto> selectInformationListByCondition(PlayerModel playerModel);
 
     public List<PlayerDto> selectPlayerListByCondition(PlayerModel playerModel);
+
+    public void addKiller(InformationModel informationModel);
 
 }

@@ -14,6 +14,7 @@ import com.mvc.dto.GameCountDto;
 import com.mvc.dto.InformationDto;
 import com.mvc.dto.PlayerDto;
 import com.mvc.dto.RoleDto;
+import com.mvc.model.InformationModel;
 import com.mvc.model.PlayerModel;
 import com.mysql.jdbc.StringUtils;
 
@@ -350,6 +351,35 @@ public class PlayerDaoImpl implements PlayerDao {
         sql.append(" ) ");
 
         Object[] paramer = new Object[]{playerModel.getInforId(), playerModel.getDate(), playerModel.getGameStatus(), playerModel.getRoleId()};
+        JdbcTemelate.update(sql.toString(), paramer);
+
+    }
+
+    /**
+     * 插入玩家信息
+     */
+    @Override
+    public void insertPlayer(InformationModel informationModel) {
+
+        final StringBuilder sql = new StringBuilder();
+
+        sql.append(" INSERT INTO ");
+        sql.append(" information ");
+        sql.append(" ( ");
+        sql.append(" player_name, ");
+        sql.append(" age, ");
+        sql.append(" gender ");
+        sql.append(" ) ");
+        sql.append(" values ");
+        sql.append(" ( ");
+        sql.append(" ?, ");
+        sql.append(" ?, ");
+        sql.append(" ? ");
+        sql.append(" ) ");
+
+        System.out.println(sql.toString());
+        System.out.println(informationModel.getPlayerName());
+        Object[] paramer = new Object[]{informationModel.getPlayerName(), informationModel.getAge(), informationModel.getGender()};
         JdbcTemelate.update(sql.toString(), paramer);
 
     }

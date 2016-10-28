@@ -5,7 +5,7 @@
     init();
 });*/
 
-define([ "common", "userAdd", "ssq", "killing", "killRateSearch" ], function(common, userAdd, ssq, killing, killRateSearch) {
+define([ "common", "userAdd", "ssq", "killing", "killRateSearch",, "killerAdd" ], function(common, userAdd, ssq, killing, killRateSearch,killerAdd) {
 
     function init() {
         refreshDateTime();

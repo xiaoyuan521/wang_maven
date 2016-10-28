@@ -12,16 +12,24 @@
 <script src="${baseUrl}js/jquery-ui.js"></script>
 <script src="${baseUrl}js/jquery-ui-i18n.js" type="text/JavaScript"></script>
 <script src="${baseUrl}js/jquery-ui.min.js" type="text/JavaScript"></script>
+<script type="text/javascript" src="${baseUrl}js/plupload.js"></script>
+<script type="text/javascript" src="${baseUrl}js/plupload.gears.js"></script>
+<script type="text/javascript" src="${baseUrl}js/plupload.silverlight.js"></script>
+<script type="text/javascript" src="${baseUrl}js/plupload.flash.js"></script>
+<script type="text/javascript" src="${baseUrl}js/plupload.browserplus.js"></script>
+<script type="text/javascript" src="${baseUrl}js/plupload.html4.js"></script>
+<script type="text/javascript" src="${baseUrl}js/plupload.html5.js"></script>
 <link type="text/css" href="${baseUrl}css/jquery-ui.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/common.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/top.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/userAdd.css" rel="stylesheet" />
+<link type="text/css" href="${baseUrl}css/killerAdd.css" rel="stylesheet" />
 <script data-main="${baseUrl}js/main" src="${baseUrl}js/require.js"></script>
 <title>SpringMvc</title>
 </head>
 <body>
- oh No  整错了 进入到了错误画面了
-    <button type="button" id="p003BackLoginBtn" value="">backToLogin</button>
+  oh No 整错了 进入到了错误画面了
+  <button type="button" id="p003BackLoginBtn" value="">backToLogin</button>
 
 </body>
 </html>
