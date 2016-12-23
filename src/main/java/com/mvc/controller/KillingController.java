@@ -49,6 +49,11 @@ public class KillingController {
         return "killerAdd";
     }
 
+    @RequestMapping(value = "/barGraph")
+    public String barGraph() {
+        return "barGraph";
+    }
+
     /**
      * player一览
      *
@@ -178,6 +183,25 @@ public class KillingController {
         return bulidReturnMap("ok", resultMap);
 
     }
+
+    /**
+     * player一览
+     *
+     * @param playerModel
+     * @return
+     */
+    @RequestMapping(value = "killing/barGraphInit", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> barGraphInit() {
+
+        List<GameCountDto> informationRateList = playerService.selectInformationList();
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("informationRateList", informationRateList);
+
+        return bulidReturnMap("ok", resultMap);
+
+    }
+
 
     /**
      * 头像上传

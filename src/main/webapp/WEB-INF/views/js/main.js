@@ -2,8 +2,8 @@ require.config({
     paths: {}
 });
 
-require([ "welcome", "userAdd", "result", "ssq", "datatable", "killing", "killRateSearch", "killerAdd"  ],
-        function(welcome, userAdd, result, ssq, datatable, killing, killRateSearch,killerAdd) {
+require([ "welcome", "userAdd", "result", "ssq", "datatable", "killing", "killRateSearch", "killerAdd","barGraph"  ],
+        function(welcome, userAdd, result, ssq, datatable, killing, killRateSearch,killerAdd,barGraph ) {
     $(function() {
         welcome.init();
         userAdd.init();
@@ -12,6 +12,6 @@ require([ "welcome", "userAdd", "result", "ssq", "datatable", "killing", "killRa
         datatable.extend();
         killing.init();
         killRateSearch.init();
-        killerAdd.init();
+        barGraph.init();
     });
 });
