@@ -15,6 +15,8 @@ public interface PlayerService {
 
     public List<RoleDto> selectRole();
 
+    public Double getNplData(int roleId, String inforId);
+
     public void addPlayer(PlayerModel playerModel);
 
     public List<PlayerDto> selectPlayerList();

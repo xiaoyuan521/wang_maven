@@ -40,6 +40,7 @@ define([ "userAdd", "ssq", "killing", "killRateSearch", "killerAdd" ,"barGraph"]
             if (pagename == "barGraph") {
                 barGraph.init();
             }
+
         })
     }
 

@@ -67,6 +67,51 @@ public class PlayerDaoImpl implements PlayerDao {
     }
 
     /**
+     * 检索拿牌率
+     */
+    @Override
+    public Double selectNplData(int roleId, int inforId) {
+
+        List<Object> paramList = new ArrayList<Object>();
+        final StringBuilder sql = new StringBuilder();
+
+        sql.append(" SELECT");
+
+        switch (roleId) {
+            case 1:
+                sql.append(" cast(avg((all_prophet_count)/(all_games_count)*100) as decimal(10,1)) AS NPL ");// 预言家
+                break;
+
+            case 2:
+                sql.append(" cast(avg((all_witch_count)/(all_games_count)*100) as decimal(10,1)) AS NPL ");// 女巫
+                break;
+            case 3:
+                sql.append(" cast(avg((all_hunter_count)/(all_games_count)*100) as decimal(10,1)) AS NPL ");// 猎人
+                break;
+            case 4:
+                sql.append(" cast(avg((all_werewolf_count)/(all_games_count)*100) as decimal(10,1)) AS NPL ");// 狼人
+                break;
+            case 5:
+                sql.append(" cast(avg((all_civilian_count)/(all_games_count)*100) as decimal(10,1)) AS NPL ");// 平民
+                break;
+        }
+        sql.append(" FROM");
+        sql.append("  game_count");
+        sql.append(" WHERE");
+        sql.append(" 1=1 ");
+
+        if (inforId != 0) {
+            sql.append(" AND ");
+            sql.append(" game_count.infor_id=? ");
+            paramList.add(inforId);
+        }
+
+        Double roleList = JdbcTemelate.queryForObject(sql.toString(), paramList.toArray(), Double.class);
+
+        return roleList;
+    }
+
+    /**
      * 检索插入的数据
      */
     @Override

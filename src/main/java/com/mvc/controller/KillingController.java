@@ -2,6 +2,7 @@ package com.mvc.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -167,6 +168,40 @@ public class KillingController {
     }
 
     /**
+     * 检索游戏胜率信息
+     *
+     * @param playerModel
+     * @return
+     */
+    @RequestMapping(value = "chartGraphSearch", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> chartGraphSearch(@RequestBody PlayerModel playerModel) {
+        List<RoleDto> roleDtoList = playerService.selectRole();
+
+        List<RoleDto> chartGraphList = new ArrayList<RoleDto>();
+
+        RoleDto chartGraphData;
+        for (RoleDto roleListData : roleDtoList) {
+            chartGraphData = new RoleDto();
+            chartGraphData.setRole(roleListData.getRole());
+            Double npl = playerService.getNplData(roleListData.getId(), playerModel.getInforId());
+
+            if(npl==null){
+                chartGraphData.setNPL(0);
+            }else{
+                chartGraphData.setNPL(npl);
+                chartGraphList.add(chartGraphData);
+            }
+        }
+
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("chartGraphList", chartGraphList);
+
+        return bulidReturnMap("ok", resultMap);
+
+    }
+
+    /**
      * 检索游戏记录查询
      *
      * @param playerModel
@@ -201,7 +236,6 @@ public class KillingController {
         return bulidReturnMap("ok", resultMap);
 
     }
-
 
     /**
      * 头像上传

@@ -29,6 +29,15 @@ public class PlayerServiceImpl implements PlayerService {
         return playerDao.selectAllRole();
     }
 
+    /**
+     * 拿牌率
+     *
+     * @return
+     */
+    @Override
+    public Double getNplData(int roleId, String inforId) {
+        return playerDao.selectNplData(roleId, Integer.parseInt(inforId));
+    }
 
     /**
      * 新增player
@@ -49,7 +58,6 @@ public class PlayerServiceImpl implements PlayerService {
         playerDao.insertPlayer(informationModel);
 
     }
-
 
     /**
      * 新增玩家游戏记录
@@ -87,7 +95,7 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public List<GameCountDto> selectInformationListByCondition(PlayerModel playerModel){
+    public List<GameCountDto> selectInformationListByCondition(PlayerModel playerModel) {
         return playerDao.selectAllInformationListByCondition(playerModel);
     }
 

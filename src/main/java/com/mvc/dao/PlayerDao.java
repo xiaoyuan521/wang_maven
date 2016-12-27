@@ -15,6 +15,8 @@ public interface PlayerDao {
 
     public List<RoleDto> selectAllRole();
 
+    public Double selectNplData(int roleId, int inforId);
+
     public void insert(PlayerModel playerModel);
 
     public List<PlayerDto> selectPlayerList();

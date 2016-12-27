@@ -33,15 +33,16 @@
 <link type="text/css" href="<%=basePath%>/css/userAdd.css" rel="stylesheet" />
 <link type="text/css" href="<%=basePath%>/css/killerAdd.css" rel="stylesheet" />
 <link href="<%=basePath%>/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="<%=basePath%>/css/animate.min.css" rel="stylesheet">
-    <link href="<%=basePath%>/css/style.min.css?v=4.0.0" rel="stylesheet"><base target="_blank">
- <script src="<%=basePath%>/js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="<%=basePath%>/js/plugins/jquery.flot.js"></script>
-    <script src="<%=basePath%>/js/plugins/jquery.flot.tooltip.min.js"></script>
-    <script src="<%=basePath%>/js/plugins/jquery.flot.resize.js"></script>
-    <script src="<%=basePath%>/js/plugins/jquery.flot.pie.js"></script>
-    <script src="<%=basePath%>/js/content.min.js?v=1.0.0"></script>
-    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<link href="<%=basePath%>/css/animate.min.css" rel="stylesheet">
+<link href="<%=basePath%>/css/style.min.css?v=4.0.0" rel="stylesheet">
+<base target="_blank">
+<script src="<%=basePath%>/js/bootstrap.min.js?v=3.3.5"></script>
+<script src="<%=basePath%>/js/plugins/jquery.flot.js"></script>
+<script src="<%=basePath%>/js/plugins/jquery.flot.tooltip.min.js"></script>
+<script src="<%=basePath%>/js/plugins/jquery.flot.resize.js"></script>
+<script src="<%=basePath%>/js/plugins/jquery.flot.pie.js"></script>
+<script src="<%=basePath%>/js/content.min.js?v=1.0.0"></script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 <script data-main="<%=basePath%>/js/main" src="<%=basePath%>/js/require.js"></script>
 <title>SpringMvc</title>
 </head>
@@ -74,14 +75,14 @@
       <a href="javascript:void(0)" data-pagename="ssq">双色球</a>
     </div>
     <div class="menu">狼人杀</div>
-     <div class="subMenu">
+    <div class="subMenu">
       <a href="javascript:void(0)" data-pagename="killerAdd">玩家信息录入</a>
     </div>
     <div class="subMenu">
       <a href="javascript:void(0)" data-pagename="killing">狼人杀录入</a>
     </div>
     <div class="subMenu">
-      <a href="javascript:void(0)" data-pagename="killRateSearch">狼人杀胜率检索</a>
+      <a href="javascript:void(0)" data-pagename="killRateSearch">狼人杀记录查询</a>
     </div>
     <div class="subMenu">
       <a href="javascript:void(0)" data-pagename="barGraph">狼人杀柱状图</a>
