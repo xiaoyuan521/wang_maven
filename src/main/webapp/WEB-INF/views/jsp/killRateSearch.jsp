@@ -13,7 +13,6 @@
 <body>
   <div style="padding-top: 30px;" id="p005RateSearch">狼人杀胜率查询</div>
   <div style="padding-top: 30px;" id="p005RecordSearch">狼人杀游戏记录查询</div>
-  <div style="padding-top: 30px;" id="p005RoleCountSearch">个人饼图查询</div>
   <div style="padding-top: 30px;">
     <table>
       <tr>
@@ -26,10 +25,6 @@
           <div style="display: inline-block;">
             <input type="radio" name="functionCheck" value="record" id="p005RecordRadio" />
             <label for="p005RecordRadio">狼人杀游戏记录查询</label>
-          </div>
-          <div style="display: inline-block;">
-            <input type="radio" name="functionCheck" value="roleCount" id="p005RoleCountRadio" />
-            <label for="p005RoleCountRadio">个人饼图查询</label>
           </div>
         </td>
       </tr>
@@ -45,15 +40,6 @@
             </select>
           </td>
         </tr>
-
-        <tr id="p005PlayerNameChartGraphTr" style="display: none;">
-          <th>玩家姓名</th>
-          <td>
-            <select style="width: 200px" id="p005PlayerNameChartGraphSelect" name="name">
-            </select>
-          </td>
-        </tr>
-
         <tr id="p005RoleTr">
           <th>玩家角色</th>
           <td>
@@ -84,7 +70,6 @@
           <td>
             <button type="button" id="p005RateSearchBtn">胜率查询</button>
             <button type="button" id="p005RecordSearchBtn">游戏记录查询</button>
-            <button type="button" id="p005chartGraphSearchBtn">个人记录</button>
           </td>
         </tr>
       </table>
@@ -93,19 +78,5 @@
   <div style="padding-top: 30px;" id="p005PlayerRateSearch"></div>
   <div id="p005InformationTable" style="width: 1300px;"></div>
   <div id="p005PlayerTable" style="width: 381px; display: none;"></div>
-  <div class="row">
-    <div class="col-sm-6" id="p005chartGraphDiv">
-      <div class="ibox float-e-margins">
-        <div class="ibox-title">
-          <h5>饼状图</h5>
-        </div>
-        <div class="ibox-content">
-          <div class="flot-chart" style="height: 200px; width: 1654px">
-            <div class="flot-chart-content" id="flot-pie-chart"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>

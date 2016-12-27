@@ -88,6 +88,10 @@
       <a href="javascript:void(0)" data-pagename="barGraph">狼人杀柱状图</a>
     </div>
 
+    <div class="subMenu">
+      <a href="javascript:void(0)" data-pagename="pieGraph">个人饼图查询</a>
+    </div>
+
   </div>
 
 

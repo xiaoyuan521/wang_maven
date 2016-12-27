@@ -55,6 +55,11 @@ public class KillingController {
         return "barGraph";
     }
 
+    @RequestMapping(value = "/pieGraph")
+    public String pieGraph() {
+        return "pieGraph";
+    }
+
     /**
      * player一览
      *
