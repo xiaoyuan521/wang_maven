@@ -92,6 +92,9 @@
       <a href="javascript:void(0)" data-pagename="pieGraph">个人饼图查询</a>
     </div>
 
+    <div class="subMenu">
+      <a href="javascript:void(0)" data-pagename="lineGraph">狼人杀折线图</a>
+    </div>
   </div>
 
 

@@ -1,7 +1,7 @@
 /**
  *
  */
-define([ "userAdd", "ssq", "killing", "killRateSearch", "killerAdd", "barGraph", "pieGraph" ], function(userAdd, ssq, killing, killRateSearch, killerAdd, barGraph, pieGraph) {
+define([ "userAdd", "ssq", "killing", "killRateSearch", "killerAdd", "barGraph", "pieGraph", "lineGraph" ], function(userAdd, ssq, killing, killRateSearch, killerAdd, barGraph, pieGraph,lineGraph) {
 
     function init() {
         loadPage();
@@ -43,6 +43,10 @@ define([ "userAdd", "ssq", "killing", "killRateSearch", "killerAdd", "barGraph",
 
             if (pagename == "pieGraph") {
                 pieGraph.init();
+            }
+
+            if (pagename == "lineGraph") {
+                lineGraph.init();
             }
 
         })

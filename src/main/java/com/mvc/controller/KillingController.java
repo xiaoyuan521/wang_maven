@@ -60,6 +60,12 @@ public class KillingController {
         return "pieGraph";
     }
 
+    @RequestMapping(value = "/lineGraph")
+    public String lineGraph() {
+        return "lineGraph";
+    }
+
+
     /**
      * player一览
      *

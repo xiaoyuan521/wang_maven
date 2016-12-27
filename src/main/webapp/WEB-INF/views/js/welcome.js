@@ -5,7 +5,7 @@
     init();
 });*/
 
-define([ "common", "userAdd", "ssq", "killing", "killRateSearch", "killerAdd","barGraph" ,"pieGraph"], function(common, userAdd, ssq, killing, killRateSearch,killerAdd,barGraph,pieGraph) {
+define([ "common", "userAdd", "ssq", "killing", "killRateSearch", "killerAdd","barGraph" ,"pieGraph","lineGraph"], function(common, userAdd, ssq, killing, killRateSearch,killerAdd,barGraph,pieGraph,lineGraph) {
 
     function init() {
         refreshDateTime();
