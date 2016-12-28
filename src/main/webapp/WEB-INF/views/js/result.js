@@ -6,6 +6,7 @@ define([ "common", "userAdd", "welcome" ], function(common, userAdd, welcome) {
     }
     ;
     function initParams() {
+        $("#dataShowDiv").hide();
         $("#p004RefeshBtn").on("click", function() {
             window.location.reload();
         })

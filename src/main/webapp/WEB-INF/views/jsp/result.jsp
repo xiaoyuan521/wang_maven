@@ -28,6 +28,10 @@
 <title>上传结果</title>
 </head>
 <body>
+  <div style="display: inline-block; float: right; color: blue; padding-top: 10px; padding-left: 40px;" id="dataShowDiv">
+    <p id="dateTimeShow"
+      style="padding-left: 20px; color: blue;background:url(${baseUrl}images/home/kuang.png) no-repeat;height:90px;width:250px;line-height:50px;font-size:12px;"></p>
+  </div>
   <div>
     <div>
       <label>上传文件之后，刷新一下工程目录，然后再刷新一下页面，就可以显示出来最新的上传的图片了</label>
