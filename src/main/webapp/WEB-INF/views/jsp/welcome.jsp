@@ -14,9 +14,6 @@
 <script src="<%=basePath%>/js/jquery.json-2.4.js" type="text/JavaScript"></script>
 <script src="<%=basePath%>/js/jquery.validate.js" type="text/JavaScript"></script>
 <script src="<%=basePath%>/js/jquery.validate.min.js" type="text/JavaScript"></script>
-<script src="<%=basePath%>/js/jquery-ui.js"></script>
-<script src="<%=basePath%>/js/jquery-ui-i18n.js" type="text/JavaScript"></script>
-<script src="<%=basePath%>/js/jquery-ui.min.js" type="text/JavaScript"></script>
 <script type="text/javascript" src="<%=basePath%>/js/plupload.js"></script>
 <script type="text/javascript" src="<%=basePath%>/js/plupload.gears.js"></script>
 <script type="text/javascript" src="<%=basePath%>/js/plupload.silverlight.js"></script>
@@ -43,6 +40,9 @@
 <script src="<%=basePath%>/js/plugins/jquery.flot.resize.js"></script>
 <script src="<%=basePath%>/js/plugins/jquery.flot.pie.js"></script>
 <script src="<%=basePath%>/js/content.min.js?v=1.0.0"></script>
+<script src="<%=basePath%>/js/jquery-ui.js"></script>
+<script src="<%=basePath%>/js/jquery-ui-i18n.js" type="text/JavaScript"></script>
+<script src="<%=basePath%>/js/jquery-ui.min.js" type="text/JavaScript"></script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 <script data-main="<%=basePath%>/js/main" src="<%=basePath%>/js/require.js"></script>
 <title>SpringMvc</title>
