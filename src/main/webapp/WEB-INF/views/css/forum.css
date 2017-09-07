@@ -1,0 +1,67 @@
+/* forumcss */
+.gray-bg {
+  background-color: #f3f3f4;
+}
+
+.nav {
+  height: 34px;
+  background: url(../images/bbsindex_07.jpg);
+  margin: 0px 8px 0px 8px;
+  text-align: center;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 34px;
+  letter-spacing: 2px;
+}
+
+.nav {
+  height: 34px;
+  background: url(../images/bbsindex_07.jpg);
+  margin: 0px 8px 0px 8px;
+  text-align: center;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 34px;
+  letter-spacing: 2px;
+}
+
+.nav .nav1 {
+  float: left;
+  width: 45%;
+  height: 34px;
+}
+
+.nav .nav2 {
+  float: left;
+  width: 20%;
+  background: url(../images/bbsindex_09.jpg) no-repeat left;
+  height: 34px;
+}
+
+.nav .nav4 {
+  float: left;
+  width: 20%;
+  background: url(../images/bbsindex_09.jpg) no-repeat left;
+  height: 34px;
+}
+
+.nav .nav5 {
+  float: left;
+  width: 15%;
+  background: url(../images/bbsindex_09.jpg) no-repeat left;
+  height: 34px;
+}
+
+.box {
+  background: #FFF;
+  border: #d6d6d8 solid 1px;
+  border-top: none;
+  margin: 0px 8px 0px 8px;
+}
+.box:hover{
+  background:#f2f2f2;
+}
+
+.gray-bg {
+    background-color: #f3f3f4;
+}

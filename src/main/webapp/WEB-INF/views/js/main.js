@@ -2,7 +2,7 @@ require.config({
     paths: {}
 });
 
-require([ "welcome", "userAdd", "result", "ssq", "datatable", "killing", "killerAdd" ], function(welcome, userAdd, result, ssq, datatable, killing, killerAdd) {
+require([ "welcome", "userAdd", "result", "ssq", "datatable", "killing", "killerAdd", "forum" ], function(welcome, userAdd, result, ssq, datatable, killing, killerAdd, forum) {
     $(function() {
         welcome.init();
         userAdd.init();
@@ -10,5 +10,6 @@ require([ "welcome", "userAdd", "result", "ssq", "datatable", "killing", "killer
         ssq.init();
         datatable.extend();
         killing.init();
+        forum.init();
     });
 });

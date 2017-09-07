@@ -15,20 +15,30 @@
   left: 0px;
   top: 100px;
   bottom: 0px;
-  width: 200px;
+  width: 189px;
   overflow: hidden;
   border-right: 1px solid black;
-  font-size:15px;
+  font-size: 14px;
 }
 
-.subMenu {
-  margin-left: 20px;
-  margin-top: 5px;
+.subMenu a{
+  background-image: url(../images/bg_menu_2_normal.png);
+  padding-left: 25px;
+  padding-top: 10px;
+  display: block;
+  background-repeat: no-repeat;
+  margin-bottom: 2px;
 }
 
 .menu {
-  margin-left: 20px;
-  margin-top: 20px;
+  background-image: url(../images/bg_menu_1_select.png);
+  cursor: pointer;
+  color: #FFF;
+  background-repeat: no-repeat;
+  padding-left: 25px;
+  padding-top: 8px;
+  display: block;
+  margin-bottom: 2px;
 }
 
 .main {
@@ -77,4 +87,9 @@
   background-clip: padding-box;
   border: 0px;
   border-bottom: none;
+}
+
+.left a {
+  text-decoration: none;
+  color: #000;
 }

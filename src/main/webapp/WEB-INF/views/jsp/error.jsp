@@ -24,6 +24,7 @@
 <link type="text/css" href="${baseUrl}css/top.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/userAdd.css" rel="stylesheet" />
 <link type="text/css" href="${baseUrl}css/killerAdd.css" rel="stylesheet" />
+<link type="text/css" href="${baseUrl}css/forum.css" rel="stylesheet" />
 <script data-main="${baseUrl}js/main" src="${baseUrl}js/require.js"></script>
 <title>SpringMvc</title>
 </head>

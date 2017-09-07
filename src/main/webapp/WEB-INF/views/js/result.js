@@ -15,7 +15,7 @@ define([ "common", "userAdd", "welcome" ], function(common, userAdd, welcome) {
     $("#p004BackLoginBtn").on("click", subMenuClickHandler);
 
     function subMenuClickHandler() {
-        window.location.href = "/" + getContextPath() + "/welcome";
+        window.location.href = "/" + getContextPath() + "/login";
     }
 
     function initListener() {

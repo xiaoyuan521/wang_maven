@@ -5,14 +5,76 @@
     init();
 });*/
 
-define([ "common", "userAdd", "ssq", "killing", "killRateSearch", "killerAdd","barGraph" ,"pieGraph","lineGraph"], function(common, userAdd, ssq, killing, killRateSearch,killerAdd,barGraph,pieGraph,lineGraph) {
+define([ "common", "userAdd", "ssq", "killing", "killRateSearch", "killerAdd","barGraph" ,"pieGraph","lineGraph", "forum"], function(common, userAdd, ssq, killing, killRateSearch,killerAdd,barGraph,pieGraph,lineGraph, forum) {
 
     function init() {
+        initParams();
         refreshDateTime();
         initListener();
         initMenu();
     }
     ;
+    function initParams() {
+        // initMenu
+        $("#userInformationMenu").show();
+        $("#ssqMenu").show();
+        $("#werewolfMenu").show();
+        $("#forumMenu").show();
+        // initsubMenu
+        $("#userAddSubMenu").hide();
+        $("#ssqSubMenu").hide();
+        $("#killerSubMenu").hide();
+        $("#killRateSearchSubMenu").hide();
+        $("#barGraphSubMenu").hide();
+        $("#pieGraphSubMenu").hide();
+        $("#lineGraphSubMenu").hide();
+        $("#forumSubMenu").hide();
+
+        $("#userInformationMenu").on("click",function(){
+            $("#userAddSubMenu").show();
+            $("#ssqSubMenu").hide();
+            $("#killerSubMenu").hide();
+            $("#killRateSearchSubMenu").hide();
+            $("#barGraphSubMenu").hide();
+            $("#pieGraphSubMenu").hide();
+            $("#lineGraphSubMenu").hide();
+            $("#forumSubMenu").hide();
+        });
+
+        $("#ssqMenu").on("click",function(){
+            $("#ssqSubMenu").show();
+            $("#userAddSubMenu").hide();
+            $("#killerSubMenu").hide();
+            $("#killRateSearchSubMenu").hide();
+            $("#barGraphSubMenu").hide();
+            $("#pieGraphSubMenu").hide();
+            $("#lineGraphSubMenu").hide();
+            $("#forumSubMenu").hide();
+        });
+
+        $("#werewolfMenu").on("click",function(){
+            $("#killerSubMenu").show();
+            $("#killRateSearchSubMenu").show();
+            $("#barGraphSubMenu").show();
+            $("#pieGraphSubMenu").show();
+            $("#lineGraphSubMenu").show();
+            $("#ssqSubMenu").hide();
+            $("#userAddSubMenu").hide();
+            $("#forumSubMenu").hide();
+        });
+
+        $("#forumMenu").on("click",function(){
+            $("#forumSubMenu").show();
+            $("#userAddSubMenu").hide();
+            $("#ssqSubMenu").hide();
+            $("#killerSubMenu").hide();
+            $("#killRateSearchSubMenu").hide();
+            $("#barGraphSubMenu").hide();
+            $("#pieGraphSubMenu").hide();
+            $("#lineGraphSubMenu").hide();
+        });
+
+    }
 
     function refreshDateTime() {
         weeks = new Array("日", "一", "二", "三", "四", "五", "六");
