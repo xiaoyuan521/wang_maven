@@ -24,7 +24,7 @@
 		</property>
 
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://192.168.196.8:9626/test?useUnicode=true&amp;characterEncoding=UTF-8</value>
+			<value>${jdbc.url}</value>
 		</property>
 		<property name="user">
 			<value>${jdbc.username}</value>
